@@ -1,3 +1,4 @@
+'''
 import math
 
 def calcPPP(c):
@@ -9,7 +10,7 @@ def calcPPP(c):
 
 x, y = calcPPP(3)
 print(x, y)
-
+'''
 # 내장 함수 사용 연습
 '''
 a1 = [2,4,6,8,10]
@@ -69,3 +70,13 @@ if target in numbers:
 else:
     print("존재하지 않습니다.")
 '''
+
+# HWID 가져오기
+import subprocess
+def GetUUID():
+   cmd = 'wmic csproduct get uuid'
+   uuid = str(subprocess.check_output(cmd))
+   pos1 = uuid.find("\\n")+2
+   uuid = uuid[pos1:-15]
+   return uuid
+print(GetUUID())
